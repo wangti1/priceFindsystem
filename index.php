@@ -2,7 +2,7 @@
 <?php
 $currentPage = $_SERVER["PHP_SELF"];
 
-$maxRows_rsdbprice = 2;
+$maxRows_rsdbprice = 3;
 $pageNum_rsdbprice = 0;
 if (isset($_GET['pageNum_rsdbprice'])) {
   $pageNum_rsdbprice = $_GET['pageNum_rsdbprice'];
