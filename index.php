@@ -42,45 +42,53 @@ $queryString_rsdbprice = sprintf("&totalRows_rsdbprice=%d%s", $totalRows_rsdbpri
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<title>╪ш╦Я╡Ия╞</title>
-</head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Д╩╥Ф═╪Ф÷╔Х╞╒ГЁ╩Г╩÷</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Ф√╟Е╝▀Д╫⌠;
+}
+-->
+</style></head>
 
 <body>
 <table width="703" height="151" border="1">
   <caption>
-    ╪ш╦Я╡Ия╞╠М
+  Д╩╥Ф═╪Ф÷╔Х╞╒
   </caption>
+  
   <tr>
-    <th width="112" scope="col">жВ╪Эid</th>
-    <th width="217" scope="col">илф╥цШЁф</th>
-    <th width="138" scope="col">илф╥йЩа©</th>
-    <th width="208" scope="col">илф╥╪ш╦Я</th>
+    <th width="112" scope="col">Д╦╩И■╝id</th>
+    <th width="217" scope="col">Е∙├Е⌠│Е░█Г╖╟</th>
+    <th width="138" scope="col">Е∙├Е⌠│Ф∙╟И┤▐</th>
+    <th width="208" scope="col">Е∙├Е⌠│Д╩╥Ф═╪</th>
   </tr>
   <?php do { ?>
     <tr>
-      <td><?php echo $row_rsdbprice['id']; ?> </td>
+      <td><a href="detail.php?id=<?php echo $row_rsdbprice['id']; ?>"><?php echo $row_rsdbprice['id']; ?> </a></td>
       <td><?php echo $row_rsdbprice['product_name']; ?></td>
       <td><?php echo $row_rsdbprice['product_number']; ?></td>
       <td><?php echo $row_rsdbprice['product_price']; ?></td>
     </tr>
     <?php } while ($row_rsdbprice = mysql_fetch_assoc($rsdbprice)); ?>
   <tr>
+    <td>
+      <?php if ($pageNum_rsdbprice > 0) { // Show if not first page ?>
+        [Г╛╛Д╦─И║╣]
+  <?php } // Show if not first page ?>    </td>
     <td><?php if ($pageNum_rsdbprice > 0) { // Show if not first page ?>
-        <a href="<?php printf("%s?pageNum_rsdbprice=%d%s", $currentPage, 0, $queryString_rsdbprice); ?>">[╣зр╩рЁ]</a>
-        <?php } // Show if not first page ?></td>
-    <td><?php if ($pageNum_rsdbprice > 0) { // Show if not first page ?>
-        <a href="<?php printf("%s?pageNum_rsdbprice=%d%s", $currentPage, max(0, $pageNum_rsdbprice - 1), $queryString_rsdbprice); ?>">[иор╩рЁ]</a>
+        <a href="<?php printf("%s?pageNum_rsdbprice=%d%s", $currentPage, max(0, $pageNum_rsdbprice - 1), $queryString_rsdbprice); ?>">[Д╦┼Д╦─И║╣]</a>
         <?php } // Show if not first page ?></td>
     <td><?php if ($pageNum_rsdbprice < $totalPages_rsdbprice) { // Show if not last page ?>
-        <a href="<?php printf("%s?pageNum_rsdbprice=%d%s", $currentPage, min($totalPages_rsdbprice, $pageNum_rsdbprice + 1), $queryString_rsdbprice); ?>">[обр╩рЁ]</a>
+        <a href="<?php printf("%s?pageNum_rsdbprice=%d%s", $currentPage, min($totalPages_rsdbprice, $pageNum_rsdbprice + 1), $queryString_rsdbprice); ?>">[Д╦▀Д╦─И║╣]</a>
         <?php } // Show if not last page ?></td>
     <td><?php if ($pageNum_rsdbprice < $totalPages_rsdbprice) { // Show if not last page ?>
-        <a href="<?php printf("%s?pageNum_rsdbprice=%d%s", $currentPage, $totalPages_rsdbprice, $queryString_rsdbprice); ?>">[вН╨Ср╩рЁ]</a>
+        <a href="<?php printf("%s?pageNum_rsdbprice=%d%s", $currentPage, $totalPages_rsdbprice, $queryString_rsdbprice); ?>">[Ф°─Е░▌Д╦─И║╣]</a>
         <?php } // Show if not last page ?></td>
   </tr>
 </table>
-<p>╧╡сп<?php echo $totalRows_rsdbprice ?> ╠й╪гб╪ё╛д©г╟╡И©╢╣з<?php echo ($startRow_rsdbprice + 1) ?>╠йжа╣з<?php echo min($startRow_rsdbprice + $maxRows_rsdbprice, $totalRows_rsdbprice) ?>╠й</p>
+<p>Е┘╠Ф°┴<?php echo $totalRows_rsdbprice ?> Х╝╟Е╫∙О╪▄Г⌡╝Е┴█Ф÷╔Х╞╒<?php echo ($startRow_rsdbprice + 1) ?>Х┤Ё<?php echo min($startRow_rsdbprice + $maxRows_rsdbprice, $totalRows_rsdbprice) ?>Х╝╟Е╫∙</p>
 </body>
 </html>
 <?php
