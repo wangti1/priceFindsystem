@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsdetail" value="name:id;datatype:int,name:product_name;datatype:string,name:product_number;datatype:int,name:product_price;datatype:string" />
+	<infoitem key="UD_redetail" value="name:id;datatype:int,name:product_name;datatype:string,name:product_number;datatype:int,name:product_price;datatype:string" />
+</info>
